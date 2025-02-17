@@ -7,6 +7,12 @@ import SearchBar from "./components/SearchBar";
 function App() {
   const [text,setText]= useState(10);
 
+  const studentList = [
+    {name:"Amal",age:"20",town:"Ampara"},
+    {name:"Kamal",age:"25",town:"Colombo"},
+    {name:"Sandipa",age:"18",town:"Kandy"},
+  ]
+
   const searchChange = (event)=> {
     console.log(event.target.value);
     setText(event.target.value);
@@ -33,9 +39,16 @@ function App() {
         <p id='sample-text'>{text}</p>
         <p id='sample-text'></p>
       </div>
-      <StudentCard name="Amal" age={20} homeTown="Gampaha"/>
-      <StudentCard name="saman" age={20} homeTown="Gampaha"/>
-      <StudentCard name="Amal" age={20} homeTown="Gampaha"/>
+      {studentList.map((student,index)=>{
+        return(
+          <StudentCard
+          key={index}
+          name={student.name}
+          age={student.town}
+          />
+        )
+      })}
+      <
       
       
     </div>
