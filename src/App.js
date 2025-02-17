@@ -1,12 +1,19 @@
-import React from "react";
+import React, {useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 import StudentCard from "./components/StudentCard";
 import SearchBar from "./components/SearchBar";
 
 function App() {
+  const [text,setText]= useState(10);
 
-// const [text,setText]= useState(0);
+  const searchChange = (event)=> {
+    console.log(event.target.value);
+    setText(event.target.value);
+  };
+
+
+
 //   let x=100;
   // const handleChange = (event) => {
   //   console.log(event.target.value);
@@ -21,9 +28,9 @@ function App() {
   return (
     <div>
       <h1>My react App</h1>     
-      <SearchBar />
+      <SearchBar onSearch={searchChange} />
       <div>
-        <p id='sample-text'></p>
+        <p id='sample-text'>{text}</p>
         <p id='sample-text'></p>
       </div>
       <StudentCard name="Amal" age={20} homeTown="Gampaha"/>

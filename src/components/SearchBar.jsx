@@ -1,9 +1,10 @@
 import React from "react";
 
-const SearchBar = ()=> {
+const SearchBar = ({onSearch})=> {
 
     const searchHandle = (event) =>{
-        console.log(event.target.value);
+        // console.log(event.target.value);
+        onSearch(event);
     };
     return(
         <div className="form-container">
@@ -11,7 +12,7 @@ const SearchBar = ()=> {
                 <input 
                 type="text" 
                 id="search" 
-                placeholder="search" 
+                placeholder="search..." 
                 onChange={searchHandle}/>
             </form>
         </div>
