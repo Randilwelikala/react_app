@@ -14,7 +14,7 @@ function App() {
   ];
 
   const searchStudents = studentList.filter((student) => {
-    return student.age > text;
+    return student.name.includes(text);
   });  
 
   const searchChange = (event)=> {
