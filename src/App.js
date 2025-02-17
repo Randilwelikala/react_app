@@ -5,13 +5,17 @@ import StudentCard from "./components/StudentCard";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const [text,setText]= useState(10);
+  const [text,setText]= useState("200");
 
   const studentList = [
-    {name:"Amal",age:"20",town:"Ampara"},
-    {name:"Kamal",age:"25",town:"Colombo"},
-    {name:"Sandipa",age:"18",town:"Kandy"},
-  ]
+    {name:"Amal",age:20,town:"Ampara"},
+    {name:"Kamal",age:25,town:"Colombo"},
+    {name:"Sandipa",age:18,town:"Kandy"},
+  ];
+
+  const searchStudents = studentList.filter((student) => {
+    return student.age > text;
+  });  
 
   const searchChange = (event)=> {
     console.log(event.target.value);
@@ -39,16 +43,17 @@ function App() {
         <p id='sample-text'>{text}</p>
         <p id='sample-text'></p>
       </div>
-      {studentList.map((student,index)=>{
+      {searchStudents.map((student,index)=>{
         return(
           <StudentCard
           key={index}
           name={student.name}
-          age={student.town}
+          age={student.age}
+          homeTown={student.town}
           />
         )
       })}
-      <
+      
       
       
     </div>
