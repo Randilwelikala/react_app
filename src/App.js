@@ -14,7 +14,7 @@ function App() {
   ];
 
   const searchStudents = studentList.filter((student) => {
-    return student.name.includes(text);
+    return student.name.toLowerCase().includes(text.toLowerCase());
   });  
 
   const searchChange = (event)=> {
