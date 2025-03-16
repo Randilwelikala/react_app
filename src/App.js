@@ -5,7 +5,7 @@ import StudentCard from "./components/StudentCard";
 import SearchBar from "./components/SearchBar";
 
 function App() {
-  const [text,setText]= useState("200");
+  const [text,setText]= useState("k");
 
   const studentList = [
     {name:"Amal",age:20,town:"Ampara"},
@@ -38,7 +38,7 @@ function App() {
   return (
     <div>
       <h1>My react App</h1>     
-      <SearchBar onSearch={searchChange} />
+      <SearchBar onSearch={searchChange} searchText={text}/>
       <div>
         <p id='sample-text'>{text}</p>
         <p id='sample-text'></p>
